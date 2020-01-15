@@ -58,7 +58,6 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|name|index|unique: true|
 
 ### Association
 
@@ -73,8 +72,8 @@ Things you may want to cover:
 |------|----|-------|
 |body|text|
 |image|string|
-|user_id|integer|foreign_key: true|
-|group_id|integer|foreign_key: true|
+|user_id|integer|foreign_key: true, null: false|
+|group_id|integer|foreign_key: true, null: false|
 
 ### Association
 -  belongs_to :group
