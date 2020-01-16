@@ -2,9 +2,6 @@
   box-sizing: border-box;
 }
 
-
-
-
 .side-bar {
   background-color: #2f3e51;
   width: 300px;
@@ -16,8 +13,7 @@
     height: 100px;
     padding: 0 20px;
     display: flex;
-    align-items: center;
-    
+    align-items: center;    
     &__top-items {
       display: flex;
       justify-content: space-between;
@@ -29,12 +25,10 @@
       }
       &__menu {
         display: flex;
-        li {
-          
+        li {          
           a {
             color: white;
-            margin-left: 5px;
-          
+            margin-left: 5px;          
           }
         }
       }
@@ -43,9 +37,7 @@
   &__group {
     height: calc(100vh - 100px);
     background-color: #2f3e51;
-    padding: 20px 20px 0;
-    
-    
+    padding: 20px 20px 0;        
     &__list {
       margin-bottom: 40px;
       margin-top: 20px;
@@ -60,14 +52,11 @@
  }
 }
 
-
-
 .chat {
   background-color: #ffffff;
   width: calc(100vw - 300px);
   height: 100vh;
-  float: right;
-  
+  float: right;  
   &__group-info {
     background-color: #ffffff;
     height: 100px;
@@ -113,8 +102,7 @@
       display: flex;
       &__in {
         position: relative;
-        width: 100%;
-        
+        width: 100%;        
         &__text {
           height: 50px;
           width: 100%;
@@ -132,10 +120,8 @@
         input {
           display: none;
         }
-
       }
     }
-
       &__btn {
         width: 100px;
         height: 50px;
@@ -144,9 +130,7 @@
         background-color: #38aef0;
         color: white;
       }
-
     }
-
   }
 
   &__message-list {
@@ -174,9 +158,7 @@
         font-size: 14px;
         margin-bottom: 46px;
       }
-
     }
-  }
-  
+  }  
 }
 
