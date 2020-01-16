@@ -1,20 +1,19 @@
 
 .wrapper
-  = render "side_bar"
   = render "main_chat"
 
   .side-bar
     .side-bar__user-name
-      .side-bar__user-name__top-items
+      %h3.side-bar__user-name__top-items
         %p.side-bar__user-name__top-items__name
-          masa
+          = current_user.name
         %ul.side-bar__user-name__top-items__menu
           %li.side-bar__user-name__top-items__edit-user
             =link_to "#" do
-              = icon('fas', 'edit')
+              = fa_icon 'pencil-square-o', class: 'icon'
           %li.side-bar__user-name__top-items__new-group
-            =link_to "#" do
-              = icon('fas', 'cog')
+            = link_to edit_user_path(current_user) do
+              = fa_icon 'cog', class: 'icon'
     .side-bar__group   
       .side-bar__group__list
         %p.side-bar__group__list__name
@@ -54,7 +53,8 @@
         .chat__message-form__box__in
           %input.chat__message-form__box__in__text{name: "message[content]", placeholder: "type a message", type: "text"}/
           %label{class: "chat__message-form__box__in__icon", for: "message"}
-            = icon('far', 'image')
+            = fa_icon 'picture-o', class: 'icon'
+            -# = icon('far', 'image')
             %input{type: "file", id: "message"}
         %input.chat__message-form__box__btn{"data-disable-with": "Send", name: "commit", type: "submit", value: "Send"}/
 
