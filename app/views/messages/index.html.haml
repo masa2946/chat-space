@@ -52,12 +52,11 @@
     .chat__message-form
       .chat__message-form__box
         .chat__message-form__box__in
-          %input.chat__message-form__box__in__text{:name : "message[content]", :placeholder : "type a message", :type : "text"}/
-          %label{class: "chat__message-form__box__in__icon"}
-            =link_to "#" do
-              = icon('far', 'image')
-              %input{type: "file"}
-        %input.chat__message-form__box__btn{"data-disable-with" : "Send", :name : "commit", :type : "submit", :value : "Send"}/
+          %input.chat__message-form__box__in__text{name: "message[content]", placeholder: "type a message", type: "text"}/
+          %label{class: "chat__message-form__box__in__icon", for: "message"}
+            = icon('far', 'image')
+            %input{type: "file", id: "message"}
+        %input.chat__message-form__box__btn{"data-disable-with": "Send", name: "commit", type: "submit", value: "Send"}/
 
 
 
