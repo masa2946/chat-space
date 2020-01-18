@@ -1,63 +1,10 @@
 
 .wrapper
+  = render "devise/shared/side_bar"
   = render "main_chat"
 
-  .side-bar
-    .side-bar__user-name
-      %h3.side-bar__user-name__top-items
-        %p.side-bar__user-name__top-items__name
-          = current_user.name
-        %ul.side-bar__user-name__top-items__menu
-          %li.side-bar__user-name__top-items__edit-user
-            =link_to new_group_path(current_user) do
-              = fa_icon 'pencil-square-o', class: 'icon'
-          %li.side-bar__user-name__top-items__new-group
-            = link_to edit_user_path(current_user) do
-              = fa_icon 'cog', class: 'icon'
-    .side-bar__group   
-      .side-bar__group__list
-        %p.side-bar__group__list__name
-          techcamp
-        %p.side-bar__group__list__message
-          まだメッセージはありません。
-  .chat
-    .chat__group-info
-      .chat__group-info__left
-        %p.chat__group-info__left__top
-          test
-        %p.chat__group-info__left__bottom
-          Member : masa
-      %ul.chat__group-info__right
-        %li.chat__group-info__right__btn
-          =link_to "#" do 
-            Edit
-    .chat__message-list
-      .chat__message-list__block
-        .chat__message-list__block__top
-          %p.chat__message-list__block__top__title
-            masa
-          %p.chat__message-list__block__top__date
-            2019/11/20(Wed) 16:43:01
-        %p.chat__message-list__block__main
-          こんにちは！
-      .chat__message-list__block
-        .chat__message-list__block__top
-          %p.chat__message-list__block__top__title
-            masa
-          %p.chat__message-list__block__top__date
-            2019/11/20(Wed) 17:43:01
-        %p.chat__message-list__block__main
-          おはよう!    
-    .chat__message-form
-      .chat__message-form__box
-        .chat__message-form__box__in
-          %input.chat__message-form__box__in__text{name: "message[content]", placeholder: "type a message", type: "text"}/
-          %label{class: "chat__message-form__box__in__icon", for: "message"}
-            = fa_icon 'picture-o', class: 'icon'
-            -# = icon('far', 'image')
-            %input{type: "file", id: "message"}
-        %input.chat__message-form__box__btn{"data-disable-with": "Send", name: "commit", type: "submit", value: "Send"}/
-
+  
+  
 
 
 
