@@ -1,0 +1,21 @@
+.chat
+  .chat__group-info
+    .chat__group-info__left
+      %p.chat__group-info__left__top
+        = @group.name
+      %p.chat__group-info__left__bottom
+        = @group.users.pluck(:name).join(' ')
+    %ul.chat__group-info__right
+      %li.chat__group-info__right__btn
+        =link_to "Edit", edit_group_path(@group)
+  .chat__message-list
+    = render @messages
+  .chat__message-form
+    .chat__message-form__box
+      .chat__message-form__box__in
+        = form_for [@group, @message] do |f|
+          = f.text_field :content, class: 'chat__message-form__box__in__text', placeholder: 'type a message'
+          = f.label :image, class: 'chat__message-form__box__in__icon' do
+            = fa_icon 'image', class: 'icon'
+            = f.file_field :image, class: 'hidden'
+          = f.submit 'Send', class: 'chat__message-form__box__btn'
