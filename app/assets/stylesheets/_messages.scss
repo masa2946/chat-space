@@ -64,7 +64,10 @@
   background-color: #ffffff;
   width: calc(100vw - 300px);
   height: 100vh;
-  float: right;  
+  float: right;
+  &__message-list {
+    overflow: scroll;
+  }  
   &__group-info {
     background-color: #ffffff;
     height: 100px;
